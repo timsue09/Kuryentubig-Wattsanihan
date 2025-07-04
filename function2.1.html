@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Functions - HydroElectric Dam and Run of River</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shine {
+  0% { background-position: -200px; }
+  100% { background-position: 200px; }
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+  padding: 0;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+header {
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  animation: slideUp 1s ease-in-out;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00bfff;
+  text-decoration: none;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00bfff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #00bfff;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.page-header {
+  text-align: center;
+  margin: 2rem auto;
+  animation: fadeIn 1.5s ease;
+}
+
+.page-header h1,
+.page-header h2 {
+  color: #00bfff;
+  animation: slideUp 1.5s ease;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  animation: fadeIn 1.5s ease;
+}
+
+.image-column {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.image-column img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-column img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 191, 255, 0.4);
+}
+
+.text-content {
+  flex: 1 1 60%;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  animation: fadeIn 2s ease;
+}
+
+.link-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #00bfff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.link-button:hover {
+  background-color: #0099cc;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  .image-column, .text-content {
+    flex: 1 1 100%;
+  }
+}
+  
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Kuryentubig Wattsanihan</a>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="function1.html">Function</a>
+      <a href="advantages.html">Advantages & Disadvantages</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <h1>Functions</h1>
+    <h2>HydroElectric Dam and Run of River</h2>
+  </div>
+
+  <main>
+    <div class="image-column">
+      <img src="pic6.jpg" alt="Hydro Dam">
+      <img src="pic7.jpg" alt="Run-of-River System">
+    </div>
+
+    <div class="text-content">
+      <p>
+        The Dam hydroelectric system works by building a large dam across
+        a river. This dam blocks the flow of the river and creates a large
+        reservoir or artificial lake. The water stored in the reservoir is full of
+        potential energy because it is held at a high elevation. When
+        electricity is needed, water is released from the reservoir through
+        tunnels in the dam. As the water flows down, it spins turbines that
+        are connected to generators. These generators convert the
+        movement of the turbines into electrical energy. One of the main
+        benefits of this system is that electricity can be produced on
+        demand, even when the river's flow is low or during dry seasons. In
+        addition to generating electricity, dams can also help control floods,
+        store water for irrigation, and supply drinking water.
+      </p>
+
+      <p>
+        On the other hand, the Run-of-River hydroelectric system does not
+        use a large dam or reservoir. Instead, it relies on the natural flow of
+        the river to generate electricity. In this system, a portion of the
+        river's water is diverted into a small canal or pipe, called a penstock,
+        which leads to the turbines. After spinning the turbines, the water is
+        returned to the river downstream. Because it does not store much
+        water, a run-of-river system can only produce electricity when the
+        river is flowing well. This means that power generation may be lower
+        during dry seasons. However, run-of-river systems are usually
+        considered more environmentally friendly because they do not
+        flood large areas of land or disrupt the natural flow of rivers as much
+        as dams do.
+      </p>
+
+      <a href="advantages.html" class="link-button">Wanna know more?</a>
+    </div>
+  </main>
+</body>
+</html>
