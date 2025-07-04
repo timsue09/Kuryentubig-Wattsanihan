@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advantages & Disadvantages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    @keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+  padding: 0;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+header {
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  animation: slideUp 1s ease forwards;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00bfff;
+  text-decoration: none;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00bfff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #00bfff;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.page-title {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.page-title h1 {
+  color: #00bfff;
+  font-size: 2rem;
+  animation: slideUp 1.2s ease;
+}
+
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+  animation: fadeIn 1.4s ease forwards;
+}
+
+.info-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  animation: slideUp 1.6s ease;
+}
+
+.info-block:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.info-text {
+  flex: 1 1 55%;
+}
+
+.info-image {
+  flex: 1 1 40%;
+}
+
+.info-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.info-image img:hover {
+  transform: scale(1.03);
+}
+
+h2 {
+  color: #00bfff;
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .info-block {
+    flex-direction: column !important;
+  }
+  .info-text, .info-image {
+    flex: 1 1 100%;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Kuryentubig Wattsanihan</a>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="function1.html">Function</a>
+      <a href="advantages.html">Advantages & Disadvantages</a>
+    </nav>
+  </header>
+
+  <div class="page-title">
+    <h1>Advantages & Disadvantages</h1>
+  </div>
+
+  <section>
+
+    <!-- ADVANTAGES -->
+    <div class="info-block">
+      <div class="info-text">
+        <h2>Advantage</h2>
+        <ul>
+          <li>Promotes clean energy and reduces reliance on fossil fuels.</li>
+          <li>Provides reliable electricity to rural communities.</li>
+          <li>Environmentally friendly, especially with small-scale setups.</li>
+          <li>Uses local water sources and recycled materials, reducing costs.</li>
+          <li>Scalable and sustainable, ideal for other rural areas too.</li>
+        </ul>
+      </div>
+      <div class="info-image">
+        <img src="pic9.jpg" alt="Advantages Image">
+      </div>
+    </div>
+
+    <!-- DISADVANTAGES -->
+    <div class="info-block">
+      <div class="info-text">
+        <h2>Disadvantage</h2>
+        <ul>
+          <li>Depends on water availability, limiting its use in dry areas.</li>
+          <li>Affected by seasons and climate changes.</li>
+          <li>Needs technical planning and community effort to set up.</li>
+          <li>Low power output may not meet large energy demands.</li>
+          <li>Requires maintenance, especially when using recycled materials.</li>
+        </ul>
+      </div>
+      <div class="info-image">
+        <img src="pic10.png" alt="Disadvantages Image">
+      </div>
+    </div>
+
+    <!-- SOLUTIONS -->
+    <div class="info-block">
+      <div class="info-text">
+        <h2>Possible Solutions for Disadvantages</h2>
+        <ul>
+          <li><strong>For Limited Water Sources</strong> – Conduct site assessments, use hybrid systems (solar/wind), and install small reservoirs to regulate flow.</li>
+          <li><strong>For Seasonal or Climate Dependence</strong> – Design for seasonal changes, add backup sources (like batteries or solar), and use efficient turbines for low water flow.</li>
+          <li><strong>For Setup Challenges</strong> – Partner with experts, conduct community training, and use simple, modular designs with local materials.</li>
+          <li><strong>For Low Power Output</strong> – Focus on essential appliances, optimize system design, or combine multiple turbines for higher output.</li>
+          <li><strong>For Maintenance Issues</strong> – Strengthen recycled parts, schedule regular checks, and mix recycled with durable materials for longer use.</li>
+        </ul>
+      </div>
+      <div class="info-image">
+        <img src="pic3.jpg" alt="Solutions Image">
+      </div>
+    </div>
+
+  </section>
+</body>
+</html>
