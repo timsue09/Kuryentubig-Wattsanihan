@@ -2,267 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kuryentubig Wattsanihan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="logo.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accordion Image</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-   @keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
+    .info button {
+      margin-top: 12px;
+      padding: 8px 16px;
+      background-color: #00bfff;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .info button:hover {
+      background-color: #009acd;
+    }
 
-@keyframes shine {
-  0% { background-position: -200px; }
-  100% { background-position: 200px; }
-}
-
-body {
-  animation: fadeIn 1s ease forwards;
-  opacity: 0;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #00bfff;
-}
-
-nav a {
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #00bfff;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-nav a:hover::after {
-  transform: scaleX(1);
-}
-
-.hero h1 {
-  animation: slideUp 1.5s ease-in-out;
-}
-
-/* Optional: fade in hero/image content */
-.hero, .photo-card {
-  animation: fadeIn 1s ease forwards;
-  opacity: 0;
-  animation-delay: 0.3s;
-}
-
-.photo-card:hover {
-  box-shadow: 0 0 30px rgba(0, 191, 255, 0.6);
-}
-
-.photo-card:hover .overlay {
-  animation: shine 1s linear infinite;
-  background: linear-gradient(135deg, rgba(0, 191, 255, 0.4) 0%, rgba(0, 255, 200, 0.4) 50%, rgba(0, 191, 255, 0.4) 100%);
-  background-size: 400% 400%;
-}
-
+    .info a {
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hydro Energy Turbine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background-color: #0f0f0f;
-      color: #ffffff;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 2rem;
-      background-color: #1a1a1a;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #00bfff;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #00bfff;
-    }
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-    .hero img {
-      max-width: 90%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
-    }
-     </section>
+  <header class="site-header">
+  <a href="index.html" class="logo-link">
+    <img src="logo.png" alt="Kuryentubig Wattsanihan Logo" class="site-logo" />
+    <h1 class="site-title">Kuryentubig Wattsanihan</h1>
+  </a>
+</header>
+
+<main>
+  <div class="card">
+    <img src="pic4.jpg" class="image" />
+    <img src="pic4.jpg" class="background" />
+    <div class="layer">
+      <div class="info">
+        <h1>About</h1>
+        <p>Learn more about hydropower and how it works.</p>
+        <a href="about.html"><button>Click Here</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="pic2.png" class="image" />
+    <img src="pic2.png" class="background" />
+    <div class="layer">
+      <div class="info">
+        <h1>Materials</h1>
+        <p>Discover the materials used.</p>
+        <a href="materials.html"><button>Click Here</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="pic12.jpg" class="image" />
+    <img src="pic12.jpg" class="background" />
+    <div class="layer">
+      <div class="info">
+        <h1>Functions</h1>
+        <p>Explore the benefits and challenges of hydro energy.</p>
+        <a href="function1.html"><button>Click Here</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="pic3.jpg" class="image" />
+    <img src="pic3.jpg" class="background" />
+    <div class="layer">
+      <div class="info">
+        <h1>Advantages and Disadvantages</h1>
+        <p>Learn what are the Advantages,Disadvantages and Solution.</p>
+        <a href="advantages.html"><button>Click Here</button></a>
+      </div>
+    </div>
+  </div>
+</main>
+
 </body>
 </html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hydro Power Watts from Water: The Potential of Hydropower Energy”</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background-color: #0f0f0f;
-      color: #ffffff;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 2rem;
-      background-color: #1a1a1a;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #00bfff;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #00bfff;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .photo-card {
-      position: relative;
-      width: 300px;
-      height: 400px;
-      margin-bottom: 2rem;
-      cursor: pointer;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 191, 255, 0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .photo-card:hover {
-      transform: scale(1.05);
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: scale-down;
-      display: block;
-    }
-
-    .photo-card .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 191, 255, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      color: white;
-      font-size: 1.3rem;
-      font-weight: bold;
-      transition: opacity 0.3s ease;
-    }
-
-    .photo-card:hover .overlay {
-      opacity: 1;
-    }
-
-    .hero img {
-      max-width: 100%;
-      height: fit-content;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="logo">
- <img src="logo.png" alt="Hydroelectric Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover; vertical-align: middle;">
-  <span style="margin-left: 10px; font-size: 1.8rem; font-weight: bold; color: #00bfff;">Kuryentubig Wattsanihan</span>
-</div>
-    <nav>
-      <a href="about.html">About</a>
-      <a href="function1.html">Function</a>
-      <a href="advantages.html">Advantages & Disadvantages</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Hydro Power 
-    </h1> "Watts from Water:The Potential of Hydropower Energy”</h1>
-
-    <div class="photo-card" onclick="window.location.href='about.html'">
-      <img src="pic1.jpg" alt="Go to About Page">
-      <div class="overlay">Learn More</div>
-    </div>
-

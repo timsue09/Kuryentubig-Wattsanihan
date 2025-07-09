@@ -8,158 +8,170 @@
   <link rel="icon" href="logo.png" type="image/png">
   <style>
     @keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
 
-@keyframes slideUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #0f0f0f;
-  color: #f0f0f0;
-  padding: 0;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-}
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-header {
-  background-color: #1a1a1a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  animation: slideUp 1s ease forwards;
-}
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: var(--dynamic-bg, url('pic3.jpg'));
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      filter: blur(8px);
+      transition: background-image 0.5s ease-in-out;
+    }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #00bfff;
-  text-decoration: none;
-}
+    header {
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      animation: slideUp 1s ease forwards;
+    }
 
-nav a {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  color: #f0f0f0;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-  position: relative;
-}
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00bfff;
+      text-decoration: none;
+    }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #00bfff;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
 
-nav a:hover {
-  color: #00bfff;
-}
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #00bfff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
 
-nav a:hover::after {
-  transform: scaleX(1);
-}
+    nav a:hover {
+      color: #00bfff;
+    }
 
-.page-title {
-  text-align: center;
-  padding: 2rem 1rem 1rem;
-  animation: fadeIn 1.2s ease forwards;
-}
+    nav a:hover::after {
+      transform: scaleX(1);
+    }
 
-.page-title h1 {
-  color: #00bfff;
-  font-size: 2rem;
-  animation: slideUp 1.2s ease;
-}
+    .page-title {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      animation: fadeIn 1.2s ease forwards;
+    }
 
-section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 2rem;
-  animation: fadeIn 1.4s ease forwards;
-}
+    .page-title h1 {
+      color: #00bfff;
+      font-size: 2rem;
+      animation: slideUp 1.2s ease;
+    }
 
-.info-block {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  animation: slideUp 1.6s ease;
-}
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+      animation: fadeIn 1.4s ease forwards;
+    }
 
-.info-block:nth-child(even) {
-  flex-direction: row-reverse;
-}
+    .info-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      animation: slideUp 1.6s ease;
+    }
 
-.info-text {
-  flex: 1 1 55%;
-}
+    .info-block:nth-child(even) {
+      flex-direction: row-reverse;
+    }
 
-.info-image {
-  flex: 1 1 40%;
-}
+    .info-text {
+      flex: 1 1 55%;
+    }
 
-.info-image img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
-  transition: transform 0.3s ease;
-}
+    .info-image {
+      flex: 1 1 40%;
+    }
 
-.info-image img:hover {
-  transform: scale(1.03);
-}
+    .info-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+      transition: transform 0.3s ease;
+    }
 
-h2 {
-  color: #00bfff;
-  margin-bottom: 1rem;
-}
+    .info-image img:hover {
+      transform: scale(1.03);
+    }
 
-ul {
-  padding-left: 1.5rem;
-}
+    h2 {
+      color: #00bfff;
+      margin-bottom: 1rem;
+    }
 
-li {
-  margin-bottom: 0.5rem;
-}
+    ul {
+      padding-left: 1.5rem;
+    }
 
-@media (max-width: 768px) {
-  .info-block {
-    flex-direction: column !important;
-  }
-  .info-text, .info-image {
-    flex: 1 1 100%;
-  }
-}
+    li {
+      margin-bottom: 0.5rem;
+    }
 
+    @media (max-width: 768px) {
+      .info-block {
+        flex-direction: column !important;
+      }
+      .info-text, .info-image {
+        flex: 1 1 100%;
+      }
+    }
   </style>
 </head>
 <body>
-   <header>
-  <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
-    <img src="logo.png" alt="Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover; margin-right: 10px;">
-    <span style="color: #00bfff; font-size: 1.5rem; font-weight: bold;">Kuryentubig Wattsanihan</span>
-  </a>
-  <nav>
-    <a href="about.html">About</a>
-    <a href="function1.html">Function</a>
-    <a href="advantages.html">Advantages & Disadvantages</a>
-  </nav>
-</header>
+  <header>
+    <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+      <img src="logo.png" alt="Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover; margin-right: 10px;">
+      <span style="color: #00bfff; font-size: 1.5rem; font-weight: bold;">Kuryentubig Wattsanihan</span>
+    </a>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="materials.html">Materials</a>
+      <a href="function1.html">Functions</a>
+      <a href="advantages.html">Advantages & Disadvantages</a>
+    </nav>
+  </header>
 
   <div class="page-title">
     <h1>Advantages & Disadvantages</h1>
@@ -168,7 +180,7 @@ li {
   <section>
 
     <!-- ADVANTAGES -->
-    <div class="info-block">
+    <div class="info-block" data-bg="pic9.jpg">
       <div class="info-text">
         <h2>Advantage</h2>
         <ul>
@@ -185,7 +197,7 @@ li {
     </div>
 
     <!-- DISADVANTAGES -->
-    <div class="info-block">
+    <div class="info-block" data-bg="pic10.png">
       <div class="info-text">
         <h2>Disadvantage</h2>
         <ul>
@@ -202,7 +214,7 @@ li {
     </div>
 
     <!-- SOLUTIONS -->
-    <div class="info-block">
+    <div class="info-block" data-bg="pic3.jpg">
       <div class="info-text">
         <h2>Possible Solutions for Disadvantages</h2>
         <ul>
@@ -219,5 +231,22 @@ li {
     </div>
 
   </section>
+
+  <script>
+    const sections = document.querySelectorAll('.info-block');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bg = entry.target.getAttribute('data-bg');
+          document.body.style.setProperty('--dynamic-bg', `url('${bg}')`);
+        }
+      });
+    }, {
+      threshold: 0.5 // 50% of the section must be visible
+    });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>

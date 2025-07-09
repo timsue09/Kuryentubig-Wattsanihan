@@ -7,124 +7,185 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="logo.png" type="image/png">
   <style>
-   @keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    /* Real background layer */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background-image: url('pic6.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      transition: background-image 0.8s ease-in-out;
+    }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #0f0f0f;
-  color: #f0f0f0;
-  padding: 0;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-}
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
 
-header {
-  background-color: #1a1a1a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  animation: slideUp 1s ease-in-out;
-}
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #00bfff;
-  text-decoration: none;
-}
+    header {
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      animation: slideUp 1s ease-in-out;
+    }
 
-nav a {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  color: #f0f0f0;
-  font-size: 1rem;
-  position: relative;
-  transition: color 0.3s ease;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #00bfff;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
+    .logo img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
 
-nav a:hover {
-  color: #00bfff;
-}
+    .logo span {
+      color: #00bfff;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-nav a:hover::after {
-  transform: scaleX(1);
-}
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
 
-.page-header {
-  text-align: center;
-  margin: 2rem auto;
-  animation: fadeIn 1.5s ease;
-}
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #00bfff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
 
-.page-header h1 {
-  color: #00bfff;
-  font-size: 2rem;
-  animation: slideUp 1.5s ease;
-}
+    nav a:hover {
+      color: #00bfff;
+    }
 
-main {
-  max-width: 800px;
-  margin: auto;
-  padding: 0 2rem 2rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  animation: fadeIn 1.5s ease;
-}
+    nav a:hover::after {
+      transform: scaleX(1);
+    }
 
-.link-button {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #00bfff;
-  color: #000;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
+    .page-header {
+      text-align: center;
+      margin: 2rem auto;
+      animation: fadeIn 1.5s ease;
+    }
 
-.link-button:hover {
-  background-color: #0099cc;
-  transform: translateY(-2px);
-}
+    .page-header h1,
+    .page-header h2 {
+      color: #00bfff;
+      font-size: 2rem;
+      animation: slideUp 1.5s ease;
+    }
 
+    main {
+      max-width: 2000px;
+      margin: auto;
+      padding: 0 2rem 2rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .image-text-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 3rem;
+      align-items: flex-start;
+    }
+
+    .image-column {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 10rem;
+    }
+
+    .image-column img {
+      max-width: 100%;
+      border-radius: 3px;
+      object-fit: cover;
+    }
+
+    .text-content {
+      flex: 2 1 400px;
+    }
+
+    .link-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #008cba;
+      color: #000;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .link-button:hover {
+      background-color: #0099cc;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .image-text-section {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
-   <header>
-  <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
-    <img src="logo.png" alt="Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover; margin-right: 10px;">
-    <span style="color: #00bfff; font-size: 1.5rem; font-weight: bold;">Kuryentubig Wattsanihan</span>
-  </a>
-  <nav>
-    <a href="about.html">About</a>
-    <a href="function1.html">Function</a>
-    <a href="advantages.html">Advantages & Disadvantages</a>
-  </nav>
-</header>
+
+  <!-- Real background layer -->
+  <div class="background" id="background-layer"></div>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Logo">
+      <span>Kuryentubig Wattsanihan</span>
+    </a>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="materials.html">Materials</a>
+      <a href="function1.html">Functions</a>
+      <a href="advantages.html">Advantages & Disadvantages</a>
+    </nav>
+  </header>
 
   <div class="page-header">
     <h1>Functions of HydroEnergy Turbines</h1>
@@ -137,7 +198,60 @@ main {
     <p>
       There are two main types of hydroelectric power production systems: <strong>Dam (Reservoir) Hydroelectric Systems</strong> and <strong>Run-of-River Hydroelectric Systems</strong>. Both systems use water to create energy, but they work in different ways and serve different purposes.
     </p>
-    <a href="function2.1.html" class="link-button">See more…</a>
+
+    <div class="page-header">
+      <h2>HydroElectric Dam and Run of River</h2>
+    </div>
+
+    <div class="image-text-section">
+      <div class="image-column">
+        <img src="pic6.jpg" alt="Hydro Dam" class="dynamic-bg" data-bg="pic6.jpg">
+        <img src="pic7.jpg" alt="Run-of-River System" class="dynamic-bg" data-bg="pic7.jpg">
+      </div>
+
+      <div class="text-content">
+        <p>
+          The Dam hydroelectric system works by building a large dam across a river. This dam blocks the flow of the river and creates a large reservoir or artificial lake. The water stored in the reservoir is full of potential energy because it is held at a high elevation. When electricity is needed, water is released from the reservoir through tunnels in the dam. As the water flows down, it spins turbines that are connected to generators. These generators convert the movement of the turbines into electrical energy.
+        </p>
+
+        <p>
+          One of the main benefits of this system is that electricity can be produced on demand, even when the river's flow is low or during dry seasons. In addition to generating electricity, dams can also help control floods, store water for irrigation, and supply drinking water.
+        </p>
+
+        <p>
+          On the other hand, the Run-of-River hydroelectric system does not use a large dam or reservoir. Instead, it relies on the natural flow of the river to generate electricity. In this system, a portion of the river's water is diverted into a small canal or pipe, called a penstock, which leads to the turbines. After spinning the turbines, the water is returned to the river downstream.
+        </p>
+
+        <p>
+          Because it does not store much water, a run-of-river system can only produce electricity when the river is flowing well. This means that power generation may be lower during dry seasons. However, run-of-river systems are usually considered more environmentally friendly because they do not flood large areas of land or disrupt the natural flow of rivers as much as dams do.
+        </p>
+
+        <a href="advantages.html" class="link-button">Wanna know more?</a>
+      </div>
+    </div>
   </main>
+
+  <script>
+    const backgroundLayer = document.getElementById('background-layer');
+    const images = document.querySelectorAll('.dynamic-bg');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const newBg = entry.target.dataset.bg;
+            backgroundLayer.style.backgroundImage = `url('${newBg}')`;
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    images.forEach(img => observer.observe(img));
+  </script>
+
 </body>
 </html>
+
+
+
