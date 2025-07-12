@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuryentubig Cover</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  <style>
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+    }
+
+    .cover {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .background {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('pic2nd.jpg'); /* Your background */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    .text {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: fadeIn 1.5s ease forwards;
+      padding: 0 1rem;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .link-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #00bfff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .link-button:hover {
+      background-color: #0099cc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover">
+    <div class="background" id="background"></div>
+    <div class="text">
+      <div class="title">KURYENTUBIG WATTSANIHAN</div>
+      <div class="subtitle">Hydro Energy Water Turbine</div>
+      <small>(Scroll up or pinch to enter)</small><br>
+      <a class="link-button" href="index.html">Enter Now</a>
+    </div>
+  </div>
+
+  <script>
+    let scale = 1;
+    const bg = document.getElementById("background");
+
+    // Zoom on scroll up
+    window.addEventListener("wheel", (e) => {
+      if (e.deltaY < 0) {
+        scale += 0.05;
+        if (scale >= 2) {
+          document.body.style.transition = "opacity 0.5s ease";
+          document.body.style.opacity = 0;
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 500);
+        } else {
+          bg.style.transform = `scale(${scale})`;
+        }
+      }
+    });
+
+    // Mobile pinch to zoom
+    let startDistance = 0;
+
+    function getTouchDistance(touches) {
+      const dx = touches[0].clientX - touches[1].clientX;
+      const dy = touches[0].clientY - touches[1].clientY;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    window.addEventListener("touchstart", (e) => {
+      if (e.touches.length === 2) {
+        startDistance = getTouchDistance(e.touches);
+      }
+    });
+
+    window.addEventListener("touchmove", (e) => {
+      if (e.touches.length === 2) {
+        const newDistance = getTouchDistance(e.touches);
+        if (newDistance - startDistance > 30) {
+          scale += 0.05;
+          if (scale >= 2) {
+            document.body.style.transition = "opacity 0.5s ease";
+            document.body.style.opacity = 0;
+            setTimeout(() => {
+              window.location.href = "index.html";
+            }, 500);
+          } else {
+            bg.style.transform = `scale(${scale})`;
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
